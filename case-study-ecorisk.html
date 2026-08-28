@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoRisk case study — Amanda Freitas</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFDF8;
+    --ink:#3D2B1F;
+    --gold:#D4AF37;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html,body{
+    width:100%;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Urbanist', sans-serif;
+  }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 64px;
+  }
+
+  /* ---------- TOP BAR (matches home) ---------- */
+  .topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:32px 64px;
+  }
+
+  .name{
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:0.01em;
+    text-decoration:none;
+  }
+
+  .back-link{
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    text-decoration:underline;
+    text-underline-offset:5px;
+    text-decoration-thickness:1px;
+    transition:color 0.3s ease;
+  }
+  .back-link:hover,
+  .back-link:focus-visible{ color:var(--gold); }
+  .back-link:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; }
+
+  /* ================= PASSWORD GATE ================= */
+  .gate{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 24px;
+  }
+
+  .gate-card{
+    width:100%;
+    max-width:400px;
+    text-align:left;
+  }
+
+  .gate-label-top{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(61,43,31,0.5);
+    margin-bottom:10px;
+  }
+
+  .gate-card h1{
+    font-size:26px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin-bottom:12px;
+  }
+
+  .gate-card p.intro{
+    font-size:14.5px;
+    line-height:1.6;
+    color:rgba(61,43,31,0.7);
+    margin-bottom:32px;
+  }
+
+  .field-label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+
+  .field-row{
+    position:relative;
+    display:flex;
+    align-items:center;
+    border:1px solid rgba(61,43,31,0.35);
+    transition:border-color 0.25s ease;
+  }
+
+  .field-row:focus-within{
+    border-color:var(--gold);
+  }
+
+  .field-row input{
+    flex:1;
+    border:none;
+    background:none;
+    outline:none;
+    padding:13px 14px;
+    font-family:'Urbanist', sans-serif;
+    font-size:15px;
+    color:var(--ink);
+  }
+
+  .toggle-visibility{
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0 14px;
+    display:flex;
+    align-items:center;
+    color:rgba(61,43,31,0.6);
+    transition:color 0.25s ease;
+  }
+  .toggle-visibility:hover{ color:var(--ink); }
+  .toggle-visibility:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+  .toggle-visibility svg{ width:18px; height:18px; }
+
+  .gate-error{
+    display:none;
+    align-items:center;
+    gap:8px;
+    margin-top:10px;
+    font-size:13px;
+    font-weight:500;
+    color:#B3261E;
+  }
+  .gate-error.show{ display:flex; }
+
+  .gate-submit{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    margin-top:20px;
+    padding:13px 24px;
+    background:var(--ink);
+    color:var(--bg);
+    border:none;
+    font-family:'Urbanist', sans-serif;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    cursor:pointer;
+    transition:background 0.3s ease;
+  }
+  .gate-submit:hover{ background:var(--gold); color:var(--ink); }
+  .gate-submit:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  .gate-back{
+    display:inline-block;
+    margin-top:28px;
+    font-size:13.5px;
+    color:rgba(61,43,31,0.6);
+    text-decoration:underline;
+    text-underline-offset:4px;
+  }
+  .gate-back:hover,
+  .gate-back:focus-visible{ color:var(--gold); }
+
+  /* ================= CASE STUDY CONTENT ================= */
+  .case-study{ display:none; }
+  .case-study.show{ display:block; }
+
+  .cs-hero{
+    padding:20px 0 80px;
+    border-bottom:1px solid rgba(61,43,31,0.2);
+  }
+
+  .cs-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(61,43,31,0.5);
+    margin-bottom:20px;
+  }
+
+  .cs-hero h1{
+    font-size:clamp(32px, 4.5vw, 52px);
+    font-weight:600;
+    letter-spacing:-0.02em;
+    line-height:1.15;
+    margin-bottom:20px;
+    max-width:16ch;
+  }
+
+  .cs-hero .context{
+    font-size:17px;
+    line-height:1.6;
+    color:rgba(61,43,31,0.75);
+    max-width:60ch;
+    margin-bottom:28px;
+  }
+
+  .cs-hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+  }
+
+  .cs-hero-meta div{
+    font-size:13px;
+  }
+
+  .cs-hero-meta span{
+    display:block;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(61,43,31,0.45);
+    margin-bottom:4px;
+    font-size:11px;
+  }
+
+  .cs-hero-note{
+    margin-top:28px;
+    font-size:13px;
+    line-height:1.6;
+    color:rgba(61,43,31,0.55);
+    font-style:italic;
+    max-width:65ch;
+  }
+
+  .cs-section{
+    padding:80px 0;
+    border-bottom:1px solid rgba(61,43,31,0.15);
+  }
+
+  .cs-section:last-of-type{
+    border-bottom:none;
+  }
+
+  .cs-section h2{
+    font-size:clamp(24px, 3vw, 34px);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin-bottom:28px;
+  }
+
+  .cs-section p{
+    font-size:15.5px;
+    line-height:1.7;
+    color:rgba(61,43,31,0.75);
+    max-width:70ch;
+    margin-bottom:16px;
+  }
+
+  .cs-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:24px;
+    margin-top:32px;
+  }
+
+  .cs-stat{
+    padding:22px;
+    border-left:2px solid var(--gold);
+  }
+
+  .cs-stat .value{
+    font-size:24px;
+    font-weight:700;
+    color:var(--ink);
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .cs-stat .label{
+    font-size:13px;
+    color:rgba(61,43,31,0.6);
+  }
+
+  .cs-subheading{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(61,43,31,0.5);
+    margin:32px 0 16px;
+  }
+
+  .cs-triple{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:24px;
+  }
+
+  .cs-triple-item h3{
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+
+  .cs-triple-item p{
+    font-size:14px;
+    margin-bottom:0;
+  }
+
+  .cs-journey-steps{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:24px;
+    counter-reset:step;
+  }
+
+  .cs-journey-steps li{
+    list-style:none;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    font-size:14.5px;
+    line-height:1.6;
+    color:rgba(61,43,31,0.75);
+    padding:14px 0;
+    border-bottom:1px solid rgba(61,43,31,0.1);
+  }
+
+  .cs-journey-steps li::before{
+    counter-increment:step;
+    content:counter(step);
+    flex-shrink:0;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:var(--ink);
+    color:var(--bg);
+    font-size:12px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .cs-decision{
+    margin-bottom:64px;
+  }
+
+  .cs-decision:last-child{
+    margin-bottom:0;
+  }
+
+  .cs-decision h3{
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:10px;
+  }
+
+  .cs-decision img{
+    width:100%;
+    height:auto;
+    display:block;
+    border:1px solid rgba(61,43,31,0.15);
+    margin:20px 0 10px;
+  }
+
+  .cs-decision .caption{
+    font-size:13px;
+    color:rgba(61,43,31,0.55);
+    line-height:1.5;
+    max-width:70ch;
+  }
+
+  .cs-outcomes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:32px;
+    margin-top:8px;
+  }
+
+  .cs-outcome-block h4{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(61,43,31,0.5);
+    margin-bottom:16px;
+  }
+
+  .cs-closing-quote{
+    font-size:20px;
+    font-weight:500;
+    line-height:1.5;
+    color:var(--ink);
+    max-width:60ch;
+    margin-bottom:24px;
+  }
+
+  .cs-closing-quote b{ color:var(--gold); }
+
+  .cs-nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    padding:60px 0 100px;
+  }
+
+  .cs-nav-links{
+    display:flex;
+    gap:28px;
+  }
+
+  .cs-nav a{
+    font-size:14px;
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:5px;
+    transition:color 0.3s ease;
+  }
+  .cs-nav a:hover,
+  .cs-nav a:focus-visible{ color:var(--gold); }
+
+  @media (max-width:820px){
+    .topbar{ padding:24px; }
+    .wrap{ padding:0 24px; }
+    .cs-hero{ padding:0 0 56px; }
+    .cs-section{ padding:56px 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="name">Amanda Freitas</a>
+  <a href="index.html#projects" class="back-link">← Back to Projects</a>
+</header>
+
+<!-- ================= PASSWORD GATE ================= -->
+<main class="gate" id="gate">
+  <div class="gate-card">
+    <div class="gate-label-top">Protected case study</div>
+    <h1>This case study is password-protected.</h1>
+    <p class="intro">Enter the password shared with you to view the EcoRisk case study.</p>
+
+    <form id="gateForm" novalidate>
+      <label class="field-label" for="passwordInput">Password</label>
+      <div class="field-row">
+        <input
+          type="password"
+          id="passwordInput"
+          name="password"
+          autocomplete="off"
+          aria-describedby="gateError"
+          aria-invalid="false"
+        >
+        <button type="button" class="toggle-visibility" id="toggleVisibility" aria-label="Show password" aria-pressed="false">
+          <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12C2 12 5.5 5.5 12 5.5C18.5 5.5 22 12 22 12C22 12 18.5 18.5 12 18.5C5.5 18.5 2 12 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="gate-error" id="gateError" role="alert">
+        <span>Incorrect password. Please try again.</span>
+      </div>
+
+      <button type="submit" class="gate-submit">Unlock case study</button>
+    </form>
+
+    <a href="index.html#projects" class="gate-back">← Back to Projects</a>
+  </div>
+</main>
+
+<!-- ================= PROTECTED CASE STUDY CONTENT ================= -->
+<!-- This container starts empty. Content is only fetched and rendered
+     into it after a correct password is submitted. See note in the
+     script below about the limitations of this approach. -->
+<article class="case-study" id="caseStudy">
+  <div class="wrap" id="caseStudyContent"></div>
+
+  <div class="wrap">
+    <nav class="cs-nav" aria-label="Case study navigation">
+      <a href="index.html#projects">← Back to Projects</a>
+      <div class="cs-nav-links">
+        <a href="index.html">Back to home</a>
+      </div>
+    </nav>
+  </div>
+</article>
+
+<script>
+  /* =========================================================
+     PASSWORD GATE
+     ---------------------------------------------------------
+     IMPORTANT — read before relying on this for real protection:
+
+     This is a STATIC, front-end-only site (no server, no backend,
+     no auth provider). That means there is no way to truly hide
+     content from someone determined to access it — anyone can open
+     browser dev tools, inspect network requests, or read this
+     script's logic.
+
+     What this implementation DOES do, within those constraints:
+       - The protected case-study text/images are NOT included in
+         this page's initial HTML. They live in a separate JSON file
+         (case-study-ecorisk-data.json) that is only fetched AFTER
+         a correct password is entered. So a casual "view source" or
+         search-engine crawl will not surface the content.
+       - The password itself is never stored in plaintext in this
+         file — only its SHA-256 hash is compared client-side, so a
+         quick "view-source" search for the password string won't
+         reveal it.
+       - Access is remembered for the browser session via
+         sessionStorage, so the user isn't re-prompted on refresh,
+         but it clears when the tab/browser is closed.
+
+     What this does NOT do:
+       - It does NOT prevent someone with technical knowledge from
+         fetching case-study-ecorisk-data.json directly by URL, or
+         from brute-forcing the hash offline.
+       - It is a lightweight ACCESS GATE for casual/unlinked-content
+         purposes (e.g. keeping a case study out of search engines
+         and off casual browsing), not real security.
+
+     For genuine protection, this would need a server-side check —
+     e.g. a Vercel Edge Middleware / serverless function that checks
+     the password server-side before ever sending the case-study
+     content to the browser. If/when the hosting setup supports that,
+     this client-side gate should be replaced with it.
+     ========================================================= */
+
+  const PASSWORD_HASH = "37ae240244f300205edbbae2d790fa76351668469f9f37c968536b7843272a35";
+  const SESSION_KEY = "ecorisk_case_unlocked";
+  const DATA_URL = "case-study-ecorisk-data.json";
+
+  const gate = document.getElementById('gate');
+  const caseStudy = document.getElementById('caseStudy');
+  const caseStudyContent = document.getElementById('caseStudyContent');
+  const form = document.getElementById('gateForm');
+  const input = document.getElementById('passwordInput');
+  const errorEl = document.getElementById('gateError');
+  const toggleBtn = document.getElementById('toggleVisibility');
+
+  async function sha256Hex(text){
+    const enc = new TextEncoder().encode(text);
+    const buf = await crypto.subtle.digest('SHA-256', enc);
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function renderCaseStudy(data){
+    const h = data.hero, c = data.challenge, p = data.process, j = data.journey, d = data.decisions, o = data.outcomes;
+
+    const statsHtml = c.stats.map(s => `
+      <div class="cs-stat">
+        <span class="value">${escapeHtml(s.value)}</span>
+        <span class="label">${escapeHtml(s.label)}</span>
+      </div>`).join('');
+
+    const uncertaintyHtml = c.costOfUncertainty.map(u => `
+      <div class="cs-triple-item">
+        <h3>${escapeHtml(u.title)}</h3>
+        <p>${escapeHtml(u.desc)}</p>
+      </div>`).join('');
+
+    const pillarsHtml = p.pillars.map(x => `
+      <div class="cs-triple-item">
+        <h3>${escapeHtml(x.title)}</h3>
+        <p>${escapeHtml(x.desc)}</p>
+      </div>`).join('');
+
+    const objectivityHtml = p.objectivity.map(x => `
+      <div class="cs-triple-item">
+        <h3>${escapeHtml(x.title)}</h3>
+        <p>${escapeHtml(x.desc)}</p>
+      </div>`).join('');
+
+    const journeyStepsHtml = j.after.map(step => `<li>${escapeHtml(step)}</li>`).join('');
+
+    const decisionsHtml = d.items.map(item => `
+      <div class="cs-decision">
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.desc)}</p>
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" loading="lazy">
+        <p class="caption">${escapeHtml(item.caption)}</p>
+      </div>`).join('');
+
+    const speedHtml = o.speed.map(s => `
+      <p><strong>${escapeHtml(s.label)}:</strong> ${escapeHtml(s.value)}</p>`).join('');
+
+    const businessHtml = o.businessImpact.map(s => `
+      <div class="cs-stat">
+        <span class="value">${escapeHtml(s.value)}</span>
+        <span class="label">${escapeHtml(s.label)}</span>
+      </div>`).join('');
+
+    const summaryHtml = o.summary.map(s => `<p>${escapeHtml(s)}</p>`).join('');
+
+    caseStudyContent.innerHTML = `
+      <section class="cs-hero">
+        <div class="cs-eyebrow">${escapeHtml(h.eyebrow)}</div>
+        <h1>${escapeHtml(h.title)}</h1>
+        <p class="context">${escapeHtml(h.context)}</p>
+        <div class="cs-hero-meta">
+          <div><span>Role</span>${escapeHtml(h.role)}</div>
+        </div>
+        <p class="cs-hero-note">${escapeHtml(h.note)}</p>
+      </section>
+
+      <section class="cs-section">
+        <h2>${escapeHtml(c.heading)}</h2>
+        ${c.paragraphs.map(par => `<p>${escapeHtml(par)}</p>`).join('')}
+        <div class="cs-stats">${statsHtml}</div>
+        <div class="cs-subheading">The cost of uncertainty</div>
+        <div class="cs-triple">${uncertaintyHtml}</div>
+      </section>
+
+      <section class="cs-section">
+        <h2>${escapeHtml(p.heading)}</h2>
+        <p>${escapeHtml(p.intro)}</p>
+        <div class="cs-subheading">Three pillars</div>
+        <div class="cs-triple">${pillarsHtml}</div>
+        <div class="cs-subheading">Objectivity</div>
+        <div class="cs-triple">${objectivityHtml}</div>
+        <p style="margin-top:32px;">${escapeHtml(p.validation)}</p>
+      </section>
+
+      <section class="cs-section">
+        <h2>${escapeHtml(j.heading)}</h2>
+        <p>${escapeHtml(j.summary)}</p>
+        <ol class="cs-journey-steps">${journeyStepsHtml}</ol>
+      </section>
+
+      <section class="cs-section">
+        <h2>${escapeHtml(d.heading)}</h2>
+        ${decisionsHtml}
+      </section>
+
+      <section class="cs-section">
+        <h2>${escapeHtml(o.heading)}</h2>
+        <div class="cs-outcomes-grid">
+          <div class="cs-outcome-block">
+            <h4>Speed and precision</h4>
+            ${speedHtml}
+          </div>
+          <div class="cs-outcome-block">
+            <h4>Business impact</h4>
+            <div class="cs-stats">${businessHtml}</div>
+          </div>
+        </div>
+        <p class="cs-closing-quote" style="margin-top:48px;">${escapeHtml(o.closing)}</p>
+        ${summaryHtml}
+      </section>
+    `;
+  }
+
+  async function unlock(){
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if(!res.ok) throw new Error('Could not load case study content.');
+      const data = await res.json();
+      renderCaseStudy(data);
+      gate.style.display = 'none';
+      caseStudy.classList.add('show');
+    } catch (err){
+      showError('Something went wrong loading this case study. Please try again.');
+    }
+  }
+
+  function showError(message){
+    errorEl.querySelector('span').textContent = message;
+    errorEl.classList.add('show');
+    input.setAttribute('aria-invalid', 'true');
+    input.focus();
+    input.select();
+  }
+
+  function clearError(){
+    errorEl.classList.remove('show');
+    input.setAttribute('aria-invalid', 'false');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearError();
+    const value = input.value.trim();
+    if(!value){
+      showError('Please enter the password.');
+      return;
+    }
+    const hash = await sha256Hex(value);
+    if(hash === PASSWORD_HASH){
+      try { sessionStorage.setItem(SESSION_KEY, '1'); } catch(e) { /* storage unavailable, session persistence skipped */ }
+      unlock();
+    } else {
+      showError('Incorrect password. Please try again.');
+    }
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    const isPassword = input.type === 'password';
+    input.type = isPassword ? 'text' : 'password';
+    toggleBtn.setAttribute('aria-pressed', String(isPassword));
+    toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+    input.focus();
+  });
+
+  // Restore access within the same browser session.
+  (function checkSession(){
+    try {
+      if(sessionStorage.getItem(SESSION_KEY) === '1'){
+        unlock();
+      }
+    } catch(e) { /* storage unavailable, always show gate */ }
+  })();
+</script>
+
+</body>
+</html>
