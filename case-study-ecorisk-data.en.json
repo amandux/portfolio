@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "eyebrow": "Protected case study",
+    "title": "EcoRisk — Environmental Risk Platform",
+    "context": "Turned risk into safe decision-making for environmental credit approval.",
+    "role": "Product Designer",
+    "note": "Client and product names in this case study have been anonymized to \u201cEcoRisk\u201d in line with the confidentiality terms of this project. [Confidential detail omitted where the source material did not specify timeline, team size, or scope.]"
+  },
+  "challenge": {
+    "heading": "Challenge / problem",
+    "paragraphs": [
+      "Incomplete and disorganized information, along with usability and accessibility issues, created a risk of misinterpretation.",
+      "Two consequences stood out: inconsistency \u2014 divergent analyses for the same client \u2014 and omission \u2014 vital data ignored in reports.",
+      "The problem wasn\u2019t a lack of information, it was disorganization."
+    ],
+    "stats": [
+      { "value": "+4 minutes", "label": "to perform simple searches" },
+      { "value": "+8 minutes", "label": "to generate complete reports" },
+      { "value": "Unfeasible", "label": "operation at that pace" }
+    ],
+    "costOfUncertainty": [
+      { "title": "Rework", "desc": "lack of confidence in preliminary analyses" },
+      { "title": "Disputes", "desc": "processes reviewed and fines received" },
+      { "title": "Losses", "desc": "financial losses due to improper approvals" }
+    ]
+  },
+  "process": {
+    "heading": "Process",
+    "intro": "Before the screen, I organized decisions.",
+    "pillars": [
+      { "title": "Query", "desc": "property data search" },
+      { "title": "Identification", "desc": "visualization of property boundaries on the map" },
+      { "title": "Analysis", "desc": "environmental risk report generation" }
+    ],
+    "objectivity": [
+      { "title": "Unified search", "desc": "centralized and cross-referenced data" },
+      { "title": "Compliance", "desc": "business rules translated visually" },
+      { "title": "Documentation", "desc": "exportable, bulletproof reports" }
+    ],
+    "validation": "I validated with the users before writing any code. Early alignment ensured full adoption of the solution."
+  },
+  "journey": {
+    "heading": "Journey simplification",
+    "summary": "Reduction from 7~9 steps to 4, ensuring the credit analyst follows the regulatory journey without deviations.",
+    "after": [
+      "Analyst receives credit request",
+      "Starts the search by CAR number, CPF/CNPJ, map click, or coordinates",
+      "The system automatically cross-references all compliance rules",
+      "Views consolidated risks directly on the property map",
+      "Generates a secure report",
+      "Moves on to the next step of the credit analysis"
+    ],
+    "legend": [
+      "Time reduced by 60s or more per step",
+      "Free of omission risk"
+    ]
+  },
+  "decisions": {
+    "heading": "Key decisions and solution",
+    "items": [
+      {
+        "title": "Decision-oriented interface",
+        "desc": "Search expanded to 3 new parameters, giving flexibility in data input and reducing friction and complexity.",
+        "image": "images/ecorisk-search-panel.png",
+        "alt": "EcoRisk search panel with options to search by CAR number, CPF/CNPJ, map click, or coordinates, alongside a satellite map of Brazil.",
+        "caption": "The consultation panel consolidates every search method \u2014 CAR number, document number, map click, or coordinates \u2014 into one interface."
+      },
+      {
+        "title": "Highlight for the selected area",
+        "desc": "Selecting a property directly on the map highlights the chosen polygon, reducing uncertainty and preventing errors.",
+        "image": "images/ecorisk-map-selection.png",
+        "alt": "Satellite map showing multiple highlighted yellow property boundaries, with one boundary outlined in teal to indicate the selected polygon.",
+        "caption": "Clicking a polygon on the map highlights the selected property boundary among overlapping records."
+      },
+      {
+        "title": "Institution management",
+        "desc": "The regulatory institution manages the registry of financial institutions, supporting security, efficiency, and transparency.",
+        "image": "images/ecorisk-institution-management.png",
+        "alt": "Institution management table listing financial institutions with banking codes, domains, and options to edit or block each entry.",
+        "caption": "An administrative view lets the regulator manage which financial institutions can access the platform."
+      },
+      {
+        "title": "Exportable risk report",
+        "desc": "The platform generates a documented, exportable report cross-referencing every relevant compliance layer for a given property.",
+        "image": "images/ecorisk-report-page1.png",
+        "alt": "First page of an EcoRisk environmental risk report, showing property owner information, cadastral situation, and a satellite map of the property boundary.",
+        "caption": "Report cover page with property identification, cadastral status, and a satellite view of the property boundary."
+      },
+      {
+        "title": "Spatial overlap conformity",
+        "desc": "Each relevant regulatory layer is cross-referenced automatically and shown with a clear conformity indicator.",
+        "image": "images/ecorisk-report-page2.png",
+        "alt": "Table of spatial overlap information listing regulatory layers such as embargoes, indigenous lands, and conservation units, each with a conformity status icon.",
+        "caption": "Every regulatory layer \u2014 embargoes, indigenous lands, conservation units, and more \u2014 is checked automatically and flagged with a conformity status."
+      }
+    ]
+  },
+  "outcomes": {
+    "heading": "Outcomes and learnings",
+    "speed": [
+      { "label": "Before", "value": "Reports generated with a high risk of human error" },
+      { "label": "After", "value": "-2 minutes to generate complete reports (100+ pages). Searches in under 60s." }
+    ],
+    "businessImpact": [
+      { "value": "-90%", "label": "in fines received for improper credit approval" },
+      { "value": "3 to 5 days", "label": "new timeframe for the approval process (previously a minimum of 3 weeks)" }
+    ],
+    "closing": "What matters: trust. More than just pretty screens, this delivered standardized decisions and reliable data. Risk was mitigated through process design.",
+    "summary": [
+      "The routine required cross-referencing dispersed data to validate a scenario.",
+      "The interface took on the role of connecting this information and guiding data reading.",
+      "The delivered model reduced manual effort and made the process predictable."
+    ]
+  }
+}
