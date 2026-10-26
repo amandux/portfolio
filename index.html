@@ -64,6 +64,8 @@
     -webkit-font-smoothing:antialiased;
   }
 
+  [hidden]{ display:none !important; }
+
   /* foco visível em tudo que é interativo: anel de 2px em quaresmeira, 2px de afastamento */
   a:focus-visible,
   button:focus-visible{
@@ -739,7 +741,7 @@
       <p data-i18n="hero.sub">Ordem no caos.<br>Clareza na experiência.</p>
       <div class="btn-group">
         <a href="#work" class="btn btn--text" data-i18n="nav.myWork">Experiência</a>
-        <a href="#projects" class="btn btn--text" data-i18n="nav.projects">Projetos</a>
+        <a href="#projects" class="btn btn--text" data-i18n="nav.projects" hidden>Projetos</a>
         <a href="#contact" class="btn btn--text" data-i18n="nav.contact">Contato</a>
       </div>
     </div>
@@ -819,7 +821,8 @@
   </div>
 </section>
 
-<section class="projects" id="projects">
+<!-- Seção temporariamente oculta (atributo "hidden" aqui e no botão "Projetos" do hero). Para reativar, remova o "hidden". -->
+<section class="projects" id="projects" hidden>
   <div class="work-head">
     <h2 data-i18n="projects.heading">Projetos</h2>
     <span data-i18n="projects.eyebrow">Atuação</span>
