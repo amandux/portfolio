@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,9 +127,12 @@
   }
 
   /* ---------- HEADLINE ---------- */
+  /* gap header -> headline was (50vh - header - half headline); cut by 25% */
   .headline{
+    --h1-size:clamp(40px, 5.4vw, 64px);
+    --header-bottom:78px;
     position:absolute;
-    top:50%;
+    top:calc(50% - (50vh - var(--header-bottom) - 1.08 * var(--h1-size)) * 0.25);
     left:50%;
     transform:translate(-50%,-50%);
     width:90%;
@@ -140,7 +143,7 @@
 
   .headline h1{
     font-family:var(--font-serif);
-    font-size:clamp(40px, 5.4vw, 64px);
+    font-size:var(--h1-size);
     font-weight:400;
     letter-spacing:-0.02em;
     line-height:1.08;
@@ -209,7 +212,7 @@
 
   @media (max-width:820px){
     .hero{ padding:var(--espaco-6); }
-    .headline h1{ font-size:clamp(32px,9vw,44px); }
+    .headline{ --h1-size:clamp(32px,9vw,44px); --header-bottom:84px; }
     .cta{ border-left:none; border-top:1px solid var(--borda); padding-left:0; padding-top:var(--espaco-4); align-items:flex-start; }
   }
 
@@ -369,25 +372,30 @@
     margin-right:var(--espaco-4);
   }
 
+  .work-row{ align-items:center; column-gap:var(--espaco-2); }
+  .w-company{ margin-right:var(--espaco-2); }
+
+  /* Etiqueta: segmento da empresa (folha) e cargo (lavanda) */
   .w-segment,
-  .w-role,
+  .w-role{
+    display:inline-flex;
+    align-items:center;
+    height:26px;
+    padding:0 var(--espaco-3);
+    border-radius:var(--raio-pilula);
+    font-size:13px;
+    line-height:18px;
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .w-segment{ background:var(--folha-clara); color:var(--folha); }
+  .w-role{ background:var(--manaca); color:var(--quaresmeira-escura); }
+
   .w-date{
+    margin-left:var(--espaco-2);
     font-size:15px;
     font-weight:500;
     color:var(--tinta-suave);
-  }
-
-  .w-segment::before,
-  .w-role::before,
-  .w-date::before{
-    content:"•";
-    display:inline-block;
-    margin:0 var(--espaco-3);
-    color:var(--lavanda);
-  }
-
-  .w-segment::before{
-    margin-left:0;
   }
 
   @media (max-width:820px){
@@ -396,10 +404,11 @@
     .work-item{ padding:var(--espaco-8) 0; }
     .work-item::before{ top:var(--espaco-8); bottom:var(--espaco-8); }
     .w-company{
-      display:block;
+      flex-basis:100%;
       margin-right:0;
-      margin-bottom:6px;
+      margin-bottom:var(--espaco-2);
     }
+    .w-date{ margin-left:0; flex-basis:100%; margin-top:var(--espaco-1); }
     .project{ padding:var(--espaco-4); }
   }
 
@@ -737,7 +746,7 @@
     <div class="name" data-i18n="nav.name">Amanda Freitas</div>
     <div class="topbar-right">
       <div class="tag" data-i18n="nav.tag">Product Designer</div>
-      <div class="lang-switch" role="group" data-i18n-attr="aria-label:lang.switcherLabel" aria-label="Language">
+      <div class="lang-switch" role="group" data-i18n-attr="aria-label:lang.switcherLabel" aria-label="Idioma">
         <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false" data-i18n="lang.en">English</button>
         <span class="lang-sep" aria-hidden="true">/</span>
         <button type="button" class="lang-btn" data-lang-btn="pt-BR" aria-pressed="false" data-i18n="lang.ptBR">Português (Brasil)</button>
@@ -747,16 +756,16 @@
 
 
   <div class="headline">
-    <h1 data-i18n="hero.headline">Creating visual order and<br>systemic efficiency.</h1>
+    <h1 data-i18n="hero.headline">Criando ordem visual e<br>eficiência sistêmica.</h1>
   </div>
 
   <div class="bottom">
     <div class="cta">
-      <p data-i18n="hero.sub">Order from chaos.<br>Clarity in experience.</p>
+      <p data-i18n="hero.sub">Ordem no caos.<br>Clareza na experiência.</p>
       <div class="btn-group">
-        <a href="#work" class="btn btn--primary" data-i18n="nav.myWork">My work</a>
-        <a href="#projects" class="btn btn--secondary" data-i18n="nav.projects">Projects</a>
-        <a href="#contact" class="btn btn--text" data-i18n="nav.contact">Contact</a>
+        <a href="#work" class="btn btn--text" data-i18n="nav.myWork">Experiência</a>
+        <a href="#projects" class="btn btn--text" data-i18n="nav.projects">Projetos</a>
+        <a href="#contact" class="btn btn--text" data-i18n="nav.contact">Contato</a>
       </div>
     </div>
   </div>
@@ -765,8 +774,8 @@
 
 <section class="work" id="work">
   <div class="work-head">
-    <h2 data-i18n="work.heading">My work</h2>
-    <span data-i18n="work.eyebrow">Experience</span>
+    <h2 data-i18n="work.heading">Experiência</h2>
+    <span data-i18n="work.eyebrow">Trajetória profissional</span>
   </div>
 
   <div class="work-list">
@@ -776,28 +785,28 @@
         <div class="w-company">Codex</div>
         <div class="w-segment">Data Intelligence</div>
         <div class="w-role">UX/UI Designer</div>
-        <div class="w-date">Jul/24 — Present</div>
+        <div class="w-date" data-i18n="work.codex.date">jul/24 — atual</div>
       </div>
 
-      <p class="work-summary" data-i18n="work.codex.summary">I design solutions for government agencies based on data for better decisions. Projects and clients under NDA.</p>
+      <p class="work-summary" data-i18n="work.codex.summary">Desenho soluções para órgãos governamentais com base em dados para decisões melhores. Projetos e clientes sob NDA.</p>
 
       <div class="project-list">
         <div class="project">
           <div class="project-head">
-            <h3 data-i18n="work.codex.projectA.title">Project A</h3>
+            <h3 data-i18n="work.codex.projectA.title">Inteligência a detecção e resposta a incêndios</h3>
             <span class="project-year">2026</span>
           </div>
-          <p class="project-desc" data-i18n="work.codex.projectA.desc">We reduced the time to detect and respond to fires in a specific biome in Brazil. The platform allows automated detection every 10 minutes, prioritization of the most serious cases, and direct communication with the responsible agencies, sending the exact geographic coordinates of the fire.</p>
-          <span class="project-impact"><span data-i18n="work.codex.projectA.impactLabel">Impact —</span> <b data-i18n="work.codex.projectA.impact">response time reduced from 2 days to 10 minutes</b></span>
+          <p class="project-desc" data-i18n="work.codex.projectA.desc">Reduzimos o tempo de detecção e resposta a incêndios em um bioma específico no Brasil. A plataforma permite detecção automatizada a cada 10 minutos, priorização dos casos mais graves e comunicação direta com os órgãos responsáveis, enviando as coordenadas geográficas exatas do incêndio.</p>
+          <span class="project-impact"><span data-i18n="work.codex.projectA.impactLabel">Impacto —</span> <b data-i18n="work.codex.projectA.impact">tempo de resposta reduzido de 2 dias para 10 minutos</b></span>
         </div>
 
         <div class="project">
           <div class="project-head">
-            <h3 data-i18n="work.codex.projectB.title">Project B</h3>
+            <h3 data-i18n="work.codex.projectB.title">Inteligência geoespacial para compliance rural</h3>
             <span class="project-year">2025</span>
           </div>
-          <p class="project-desc" data-i18n="work.codex.projectB.desc">We transformed geospatial environmental intelligence into strategic support for the granting of rural credit in Brazil. I designed a centralized experience that converts complex geospatial data into instant actionable intelligence.</p>
-          <span class="project-impact"><span data-i18n="work.codex.projectB.impactLabel">Impact —</span> <b data-i18n="work.codex.projectB.impact">70% reduction in analysis time</b></span>
+          <p class="project-desc" data-i18n="work.codex.projectB.desc">Transformamos inteligência geoespacial ambiental em suporte estratégico para a concessão de crédito rural no Brasil. Desenhei uma experiência centralizada que converte dados geoespaciais complexos em inteligência acionável instantânea.</p>
+          <span class="project-impact"><span data-i18n="work.codex.projectB.impactLabel">Impacto —</span> <b data-i18n="work.codex.projectB.impact">redução de 70% no tempo de análise</b></span>
         </div>
       </div>
     </div>
@@ -807,27 +816,27 @@
         <div class="w-company">Pixeon</div>
         <div class="w-segment">HealthTech</div>
         <div class="w-role">Product Designer</div>
-        <div class="w-date">Jun/23 — Jan/24</div>
+        <div class="w-date" data-i18n="work.pixeon.date">jun/23 — jan/24</div>
       </div>
 
-      <p class="work-summary" data-i18n="work.pixeon.summary">I designed hospital and healthcare solutions focused on high reliability and performance.</p>
+      <p class="work-summary" data-i18n="work.pixeon.summary">Desenhei soluções hospitalares e de saúde focadas em alta confiabilidade e performance.</p>
 
       <div class="project-list">
         <div class="project">
-          <p class="project-desc" data-i18n="work.pixeon.item1">I conducted a usability test on an internal product and identified opportunities to improve it before it goes to users.</p>
+          <p class="project-desc" data-i18n="work.pixeon.item1">Conduzi um teste de usabilidade em um produto interno e identifiquei oportunidades de melhoria antes de chegar aos usuários.</p>
         </div>
 
         <div class="project">
-          <p class="project-desc" data-i18n="work.pixeon.item2">I reviewed the booking flow for exams based on user data, identified hypotheses for the high abandonment rate, and suggested anticipating which documents are required to book and testing whether that reduces the rate.</p>
+          <p class="project-desc" data-i18n="work.pixeon.item2">Revisei o fluxo de agendamento de exames com base em dados de usuários, identifiquei hipóteses para a alta taxa de abandono e sugeri antecipar quais documentos são necessários para o agendamento, testando se isso reduz a taxa.</p>
         </div>
 
         <div class="project">
-          <p class="project-desc" data-i18n="work.pixeon.item3">I designed AI conversation flows for a chatbot booking exams.</p>
+          <p class="project-desc" data-i18n="work.pixeon.item3">Desenhei fluxos de conversa com IA para um chatbot de agendamento de exames.</p>
         </div>
 
         <div class="project">
-          <span class="impact-label" data-i18n="work.pixeon.impactLabel">Impact</span>
-          <p class="project-desc" data-i18n="work.pixeon.impact">I led the ideation and creation of high-fidelity prototypes to validate Product-Market Fit with stakeholders and end-users. This visual materialization was crucial in supporting strategic business decisions that resulted in the largest sale in the company's history within this segment.</p>
+          <span class="impact-label" data-i18n="work.pixeon.impactLabel">Impacto</span>
+          <p class="project-desc" data-i18n="work.pixeon.impact">Liderei a ideação e criação de protótipos de alta fidelidade para validar o Product-Market Fit com stakeholders e usuários finais. Essa materialização visual foi fundamental para embasar decisões estratégicas de negócio que resultaram na maior venda da história da empresa nesse segmento.</p>
         </div>
       </div>
     </div>
@@ -837,8 +846,8 @@
 
 <section class="projects" id="projects">
   <div class="work-head">
-    <h2 data-i18n="projects.heading">Projects</h2>
-    <span data-i18n="projects.eyebrow">Case studies</span>
+    <h2 data-i18n="projects.heading">Projetos</h2>
+    <span data-i18n="projects.eyebrow">Atuação</span>
   </div>
 
   <div class="project-grid">
@@ -850,26 +859,26 @@
             <rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.6"/>
             <path d="M8 10.5V7.5C8 5.29086 9.79086 3.5 12 3.5C14.2091 3.5 16 5.29086 16 7.5V10.5" stroke="currentColor" stroke-width="1.6"/>
           </svg>
-          <span data-i18n="projects.ecorisk.lock">Protected case study</span>
+          <span data-i18n="projects.ecorisk.lock">Case protegido</span>
         </span>
       </div>
 
-      <h3 class="project-card-title" data-i18n="projects.ecorisk.title">EcoRisk — Environmental Risk Platform</h3>
+      <h3 class="project-card-title" data-i18n="projects.ecorisk.title">EcoRisk — Plataforma de Risco Ambiental</h3>
 
       <div class="project-card-tags">
         <span data-i18n="projects.ecorisk.tag1">UX/UI Design</span>
-        <span data-i18n="projects.ecorisk.tag2">Systems thinking</span>
-        <span data-i18n="projects.ecorisk.tag3">Data-heavy interfaces</span>
+        <span data-i18n="projects.ecorisk.tag2">Pensamento sistêmico</span>
+        <span data-i18n="projects.ecorisk.tag3">Interfaces com muitos dados</span>
       </div>
 
-      <p class="project-card-summary" data-i18n="projects.ecorisk.summary">Turning fragmented environmental compliance data into a clear, decision-ready risk assessment platform for credit analysts.</p>
+      <p class="project-card-summary" data-i18n="projects.ecorisk.summary">Transformando dados fragmentados de conformidade ambiental em uma plataforma clara e pronta para decisão, voltada a analistas de crédito.</p>
 
       <div class="project-card-meta">
-        <span data-i18n="projects.ecorisk.role">Role — Product Designer</span>
+        <span data-i18n="projects.ecorisk.role">Função — Product Designer</span>
       </div>
 
       <a href="case-study-ecorisk.html" class="project-card-cta">
-        <span data-i18n="projects.ecorisk.cta">View case study</span>
+        <span data-i18n="projects.ecorisk.cta">Ver case completo</span>
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -883,23 +892,23 @@
 
 <section class="contact" id="contact">
   <div class="work-head">
-    <h2 data-i18n="contact.heading">Contact</h2>
-    <span data-i18n="contact.eyebrow">Always open to new adventures</span>
+    <h2 data-i18n="contact.heading">Contato</h2>
+    <span data-i18n="contact.eyebrow">Sempre aberta a novas aventuras</span>
   </div>
 
-  <p class="contact-copy" data-i18n="contact.copy">Got a complex design knot to untangle or just need a second opinion? Let's talk. The tea (or the email) is on me.</p>
+  <p class="contact-copy" data-i18n="contact.copy">Tem um problema complexo de design para resolver ou só precisa de uma segunda opinião? Vamos conversar. O chá (ou e-mail) é por minha conta!</p>
 
   <div class="contact-actions">
 
     <div class="email-row">
       <span class="email-text" id="emailText">amandafreitasux@outlook.com</span>
-      <button class="copy-btn" id="copyBtn" onclick="copyEmail()" aria-label="Copy email address" data-i18n-attr="aria-label:contact.copyEmailLabel">
+      <button class="copy-btn" id="copyBtn" onclick="copyEmail()" aria-label="Copiar endereço de e-mail" data-i18n-attr="aria-label:contact.copyEmailLabel">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="8.5" y="8.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/>
           <path d="M15.5 8.5V6.5C15.5 5.39543 14.6046 4.5 13.5 4.5H6.5C5.39543 4.5 4.5 5.39543 4.5 6.5V13.5C4.5 14.6046 5.39543 15.5 6.5 15.5H8.5" stroke="currentColor" stroke-width="1.6"/>
         </svg>
       </button>
-      <span class="copy-feedback" id="copyFeedback" data-i18n="contact.copied">Copied</span>
+      <span class="copy-feedback" id="copyFeedback" data-i18n="contact.copied">Copiado</span>
     </div>
 
     <a class="linkedin-btn" href="https://www.linkedin.com/in/amandafreitas/" target="_blank" rel="noopener">

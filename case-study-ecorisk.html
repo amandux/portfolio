@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoRisk case study — Amanda Freitas</title>
+<title>Case EcoRisk — Amanda Freitas</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
@@ -577,8 +577,8 @@
 <header class="topbar">
   <a href="index.html" class="name" data-i18n="nav.name">Amanda Freitas</a>
   <div class="topbar-right">
-    <a href="index.html#projects" class="back-link" data-i18n="case.backToProjects">← Back to Projects</a>
-    <div class="lang-switch" role="group" data-i18n-attr="aria-label:lang.switcherLabel" aria-label="Language">
+    <a href="index.html#projects" class="back-link" data-i18n="case.backToProjects">← Voltar para Projetos</a>
+    <div class="lang-switch" role="group" data-i18n-attr="aria-label:lang.switcherLabel" aria-label="Idioma">
       <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false" data-i18n="lang.en">English</button>
       <span class="lang-sep" aria-hidden="true">/</span>
       <button type="button" class="lang-btn" data-lang-btn="pt-BR" aria-pressed="false" data-i18n="lang.ptBR">Português (Brasil)</button>
@@ -589,12 +589,12 @@
 <!-- ================= PASSWORD GATE ================= -->
 <main class="gate" id="gate">
   <div class="gate-card">
-    <div class="gate-label-top" data-i18n="case.gate.label">Protected case study</div>
-    <h1 data-i18n="case.gate.heading">This case study is password-protected.</h1>
-    <p class="intro" data-i18n="case.gate.intro">Enter the password shared with you to view the EcoRisk case study.</p>
+    <div class="gate-label-top" data-i18n="case.gate.label">Case protegido</div>
+    <h1 data-i18n="case.gate.heading">Este case é protegido por senha.</h1>
+    <p class="intro" data-i18n="case.gate.intro">Digite a senha que foi compartilhada com você para ver o case do EcoRisk.</p>
 
     <form id="gateForm" novalidate>
-      <label class="field-label" for="passwordInput" data-i18n="case.gate.passwordLabel">Password</label>
+      <label class="field-label" for="passwordInput" data-i18n="case.gate.passwordLabel">Senha</label>
       <div class="field-row">
         <input
           type="password"
@@ -604,7 +604,7 @@
           aria-describedby="gateError"
           aria-invalid="false"
         >
-        <button type="button" class="toggle-visibility" id="toggleVisibility" aria-label="Show password" aria-pressed="false" data-i18n-attr="aria-label:case.gate.showPassword">
+        <button type="button" class="toggle-visibility" id="toggleVisibility" aria-label="Mostrar senha" aria-pressed="false" data-i18n-attr="aria-label:case.gate.showPassword">
           <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 12C2 12 5.5 5.5 12 5.5C18.5 5.5 22 12 22 12C22 12 18.5 18.5 12 18.5C5.5 18.5 2 12 2 12Z" stroke="currentColor" stroke-width="1.6"/>
             <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/>
@@ -613,13 +613,13 @@
       </div>
 
       <div class="gate-error" id="gateError" role="alert">
-        <span data-i18n="case.gate.errorWrong">Incorrect password. Please try again.</span>
+        <span data-i18n="case.gate.errorWrong">Senha incorreta. Tente novamente.</span>
       </div>
 
-      <button type="submit" class="gate-submit" data-i18n="case.gate.submit">Unlock case study</button>
+      <button type="submit" class="gate-submit" data-i18n="case.gate.submit">Desbloquear case</button>
     </form>
 
-    <a href="index.html#projects" class="gate-back" data-i18n="case.backToProjects">← Back to Projects</a>
+    <a href="index.html#projects" class="gate-back" data-i18n="case.backToProjects">← Voltar para Projetos</a>
   </div>
 </main>
 
@@ -631,10 +631,10 @@
   <div class="wrap" id="caseStudyContent"></div>
 
   <div class="wrap">
-    <nav class="cs-nav" data-i18n-attr="aria-label:case.nav.ariaLabel" aria-label="Case study navigation">
-      <a href="index.html#projects" data-i18n="case.backToProjects">← Back to Projects</a>
+    <nav class="cs-nav" data-i18n-attr="aria-label:case.nav.ariaLabel" aria-label="Navegação do case">
+      <a href="index.html#projects" data-i18n="case.backToProjects">← Voltar para Projetos</a>
       <div class="cs-nav-links">
-        <a href="index.html" data-i18n="case.backToHome">Back to home</a>
+        <a href="index.html" data-i18n="case.backToHome">Voltar para o início</a>
       </div>
     </nav>
   </div>
@@ -786,16 +786,16 @@
         <h2>${escapeHtml(c.heading)}</h2>
         ${c.paragraphs.map(par => `<p>${escapeHtml(par)}</p>`).join('')}
         <div class="cs-stats">${statsHtml}</div>
-        <div class="cs-subheading">The cost of uncertainty</div>
+        <div class="cs-subheading">${escapeHtml(window.i18n.t('case.sub.uncertainty'))}</div>
         <div class="cs-triple">${uncertaintyHtml}</div>
       </section>
 
       <section class="cs-section">
         <h2>${escapeHtml(p.heading)}</h2>
         <p>${escapeHtml(p.intro)}</p>
-        <div class="cs-subheading">Three pillars</div>
+        <div class="cs-subheading">${escapeHtml(window.i18n.t('case.sub.pillars'))}</div>
         <div class="cs-triple">${pillarsHtml}</div>
-        <div class="cs-subheading">Objectivity</div>
+        <div class="cs-subheading">${escapeHtml(window.i18n.t('case.sub.objectivity'))}</div>
         <div class="cs-triple">${objectivityHtml}</div>
         <p style="margin-top:32px;">${escapeHtml(p.validation)}</p>
       </section>
@@ -830,7 +830,7 @@
   }
 
   async function unlock(){
-    const locale = (window.i18n && window.i18n.getLocale()) || 'en';
+    const locale = (window.i18n && window.i18n.getLocale()) || 'pt-BR';
     try {
       const res = await fetch(dataUrlForLocale(locale), { cache: 'no-store' });
       if(!res.ok) throw new Error('Could not load case study content.');

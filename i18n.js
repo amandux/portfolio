@@ -21,7 +21,7 @@
   'use strict';
 
   var SUPPORTED = ['en', 'pt-BR'];
-  var DEFAULT_LOCALE = 'en';
+  var DEFAULT_LOCALE = 'pt-BR';
   var STORAGE_KEY = 'site_locale';
   var DICTS = {}; // cache: { en: {...}, 'pt-BR': {...} }
 
@@ -43,7 +43,8 @@
   function resolveInitialLocale() {
     var saved = safeStorageGet(STORAGE_KEY);
     if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
-    return detectBrowserLocale();
+    // Português (BR) is the site's main language: no browser-language override.
+    return DEFAULT_LOCALE;
   }
 
   // Only <br> is allowed as inline markup inside a translated string.
