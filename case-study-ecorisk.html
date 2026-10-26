@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case EcoRisk — Amanda Freitas</title>
+<title>Inteligência geoespacial para compliance rural — Amanda Freitas</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
@@ -142,7 +142,6 @@
 
   /* LinkSeta-style text links */
   .back-link,
-  .gate-back,
   .cs-nav a{
     color:var(--quaresmeira);
     font-size:15px;
@@ -155,142 +154,9 @@
     transition:color .18s ease-out;
   }
   .back-link:hover,
-  .gate-back:hover,
   .cs-nav a:hover{
     color:var(--quaresmeira-escura);
     text-decoration-color:currentColor;
-  }
-
-  /* ================= PASSWORD GATE ================= */
-  .gate{
-    min-height:80vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:var(--espaco-12) var(--espaco-6);
-  }
-
-  .gate-card{
-    width:100%;
-    max-width:420px;
-    text-align:left;
-  }
-
-  /* sobretítulo */
-  .gate-label-top{
-    font-size:12px;
-    line-height:16px;
-    font-weight:600;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--tinta-suave);
-    margin-bottom:var(--espaco-3);
-  }
-
-  .gate-card h1{
-    font-family:var(--font-serif);
-    font-size:32px;
-    line-height:40px;
-    font-weight:500;
-    letter-spacing:-0.01em;
-    margin-bottom:var(--espaco-3);
-  }
-
-  .gate-card p.intro{
-    font-size:16px;
-    line-height:26px;
-    color:var(--tinta-suave);
-    margin-bottom:var(--espaco-8);
-  }
-
-  .field-label{
-    display:block;
-    font-size:15px;
-    line-height:20px;
-    font-weight:500;
-    color:var(--tinta);
-    margin-bottom:var(--espaco-2);
-  }
-
-  .field-row{
-    position:relative;
-    display:flex;
-    align-items:center;
-    background:var(--superficie);
-    border:1px solid var(--borda-controle);
-    border-radius:var(--raio-md);
-    transition:border-color .18s ease-out;
-  }
-
-  .field-row:focus-within{
-    border-color:var(--quaresmeira);
-    outline:2px solid var(--quaresmeira);
-    outline-offset:2px;
-  }
-
-  .field-row input{
-    flex:1;
-    min-height:44px;
-    border:none;
-    background:none;
-    outline:none;
-    padding:0 var(--espaco-4);
-    font-family:var(--font-sans);
-    font-size:16px;
-    color:var(--tinta);
-  }
-
-  .toggle-visibility{
-    background:none;
-    border:none;
-    cursor:pointer;
-    padding:0 var(--espaco-4);
-    min-height:44px;
-    display:flex;
-    align-items:center;
-    color:var(--tinta-suave);
-    border-radius:var(--raio-md);
-    transition:color .18s ease-out;
-  }
-  .toggle-visibility:hover{ color:var(--quaresmeira); }
-  .toggle-visibility svg{ width:20px; height:20px; }
-
-  .gate-error{
-    display:none;
-    align-items:center;
-    gap:var(--espaco-2);
-    margin-top:var(--espaco-3);
-    font-size:14px;
-    line-height:22px;
-    font-weight:500;
-    color:var(--erro);
-  }
-  .gate-error.show{ display:flex; }
-
-  /* Botao primário (pílula) */
-  .gate-submit{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:100%;
-    height:44px;
-    margin-top:var(--espaco-6);
-    padding:0 var(--espaco-6);
-    background:var(--quaresmeira);
-    color:var(--superficie);
-    border:1px solid transparent;
-    border-radius:var(--raio-pilula);
-    font-family:var(--font-sans);
-    font-size:15px;
-    font-weight:500;
-    cursor:pointer;
-    transition:background-color .18s ease-out;
-  }
-  .gate-submit:hover{ background:var(--quaresmeira-escura); }
-
-  .gate-back{
-    display:inline-block;
-    margin-top:var(--espaco-8);
   }
 
   /* ================= CASE STUDY CONTENT ================= */
@@ -586,48 +452,8 @@
   </div>
 </header>
 
-<!-- ================= PASSWORD GATE ================= -->
-<main class="gate" id="gate">
-  <div class="gate-card">
-    <div class="gate-label-top" data-i18n="case.gate.label">Case protegido</div>
-    <h1 data-i18n="case.gate.heading">Este case é protegido por senha.</h1>
-    <p class="intro" data-i18n="case.gate.intro">Digite a senha que foi compartilhada com você para ver o case do EcoRisk.</p>
-
-    <form id="gateForm" novalidate>
-      <label class="field-label" for="passwordInput" data-i18n="case.gate.passwordLabel">Senha</label>
-      <div class="field-row">
-        <input
-          type="password"
-          id="passwordInput"
-          name="password"
-          autocomplete="off"
-          aria-describedby="gateError"
-          aria-invalid="false"
-        >
-        <button type="button" class="toggle-visibility" id="toggleVisibility" aria-label="Mostrar senha" aria-pressed="false" data-i18n-attr="aria-label:case.gate.showPassword">
-          <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 12C2 12 5.5 5.5 12 5.5C18.5 5.5 22 12 22 12C22 12 18.5 18.5 12 18.5C5.5 18.5 2 12 2 12Z" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="gate-error" id="gateError" role="alert">
-        <span data-i18n="case.gate.errorWrong">Senha incorreta. Tente novamente.</span>
-      </div>
-
-      <button type="submit" class="gate-submit" data-i18n="case.gate.submit">Desbloquear case</button>
-    </form>
-
-    <a href="index.html#projects" class="gate-back" data-i18n="case.backToProjects">← Voltar para Projetos</a>
-  </div>
-</main>
-
-<!-- ================= PROTECTED CASE STUDY CONTENT ================= -->
-<!-- This container starts empty. Content is only fetched and rendered
-     into it after a correct password is submitted. See note in the
-     script below about the limitations of this approach. -->
-<article class="case-study" id="caseStudy">
+<!-- ================= CASE STUDY CONTENT ================= -->
+<article class="case-study show" id="caseStudy">
   <div class="wrap" id="caseStudyContent"></div>
 
   <div class="wrap">
@@ -643,78 +469,23 @@
 <script src="i18n/i18n.js"></script>
 <script>
   // Keep the document title in sync with the active locale.
-  var CASE_PAGE_TITLES = { en: "EcoRisk case study — Amanda Freitas", "pt-BR": "Case EcoRisk — Amanda Freitas" };
+  var CASE_PAGE_TITLES = { en: "EcoRisk case study — Amanda Freitas", "pt-BR": "Inteligência geoespacial para compliance rural — Amanda Freitas" };
   document.addEventListener('localechange', function (e) {
     document.title = CASE_PAGE_TITLES[e.detail.locale] || document.title;
   });
 </script>
 <script>
-  /* =========================================================
-     PASSWORD GATE
-     ---------------------------------------------------------
-     IMPORTANT — read before relying on this for real protection:
-
-     This is a STATIC, front-end-only site (no server, no backend,
-     no auth provider). That means there is no way to truly hide
-     content from someone determined to access it — anyone can open
-     browser dev tools, inspect network requests, or read this
-     script's logic.
-
-     What this implementation DOES do, within those constraints:
-       - The protected case-study text/images are NOT included in
-         this page's initial HTML. They live in a separate JSON file
-         (case-study-ecorisk-data.json) that is only fetched AFTER
-         a correct password is entered. So a casual "view source" or
-         search-engine crawl will not surface the content.
-       - The password itself is never stored in plaintext in this
-         file — only its SHA-256 hash is compared client-side, so a
-         quick "view-source" search for the password string won't
-         reveal it.
-       - Access is remembered for the browser session via
-         sessionStorage, so the user isn't re-prompted on refresh,
-         but it clears when the tab/browser is closed.
-
-     What this does NOT do:
-       - It does NOT prevent someone with technical knowledge from
-         fetching case-study-ecorisk-data.json directly by URL, or
-         from brute-forcing the hash offline.
-       - It is a lightweight ACCESS GATE for casual/unlinked-content
-         purposes (e.g. keeping a case study out of search engines
-         and off casual browsing), not real security.
-
-     For genuine protection, this would need a server-side check —
-     e.g. a Vercel Edge Middleware / serverless function that checks
-     the password server-side before ever sending the case-study
-     content to the browser. If/when the hosting setup supports that,
-     this client-side gate should be replaced with it.
-     ========================================================= */
-
-  const PASSWORD_HASH = "37ae240244f300205edbbae2d790fa76351668469f9f37c968536b7843272a35";
-  const SESSION_KEY = "ecorisk_case_unlocked";
-
-  // One data file per locale. Language never changes the password or the
-  // session-unlocked state below -- it only changes which JSON gets fetched
-  // and re-rendered once access has already been granted.
+  // One data file per locale; switching language re-fetches and re-renders in place.
   function dataUrlForLocale(locale){
     return locale === 'pt-BR'
       ? './case-study-ecorisk-data.pt-BR.json'
       : './case-study-ecorisk-data.en.json';
   }
 
-  let lastRenderedData = null; // cached so a language switch can re-render without re-auth
-
-  const gate = document.getElementById('gate');
-  const caseStudy = document.getElementById('caseStudy');
   const caseStudyContent = document.getElementById('caseStudyContent');
-  const form = document.getElementById('gateForm');
-  const input = document.getElementById('passwordInput');
-  const errorEl = document.getElementById('gateError');
-  const toggleBtn = document.getElementById('toggleVisibility');
 
-  async function sha256Hex(text){
-    const enc = new TextEncoder().encode(text);
-    const buf = await crypto.subtle.digest('SHA-256', enc);
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  function t(key){
+    return (window.i18n && window.i18n.t) ? window.i18n.t(key) : key;
   }
 
   function escapeHtml(str){
@@ -773,12 +544,8 @@
 
     caseStudyContent.innerHTML = `
       <section class="cs-hero">
-        <div class="cs-eyebrow">${escapeHtml(h.eyebrow)}</div>
         <h1>${escapeHtml(h.title)}</h1>
         <p class="context">${escapeHtml(h.context)}</p>
-        <div class="cs-hero-meta">
-          <div><span>Role</span>${escapeHtml(h.role)}</div>
-        </div>
         <p class="cs-hero-note">${escapeHtml(h.note)}</p>
       </section>
 
@@ -829,81 +596,19 @@
     `;
   }
 
-  async function unlock(){
+  async function loadCase(){
     const locale = (window.i18n && window.i18n.getLocale()) || 'pt-BR';
     try {
       const res = await fetch(dataUrlForLocale(locale), { cache: 'no-store' });
       if(!res.ok) throw new Error('Could not load case study content.');
-      const data = await res.json();
-      lastRenderedData = data;
-      renderCaseStudy(data);
-      gate.style.display = 'none';
-      caseStudy.classList.add('show');
+      renderCaseStudy(await res.json());
     } catch (err){
-      showError(t('case.gate.errorLoad'));
+      caseStudyContent.textContent = t('case.gate.errorLoad');
     }
   }
 
-  function t(key){
-    return (window.i18n && window.i18n.t) ? window.i18n.t(key) : key;
-  }
-
-  // If the visitor switches language after already unlocking the case
-  // study, re-fetch the locale-specific data file and re-render in place.
-  // This never touches PASSWORD_HASH or SESSION_KEY -- switching language
-  // can't lock or unlock access, it only changes which text is shown.
-  document.addEventListener('localechange', function () {
-    if (caseStudy.classList.contains('show')) {
-      unlock();
-    }
-  });
-
-  function showError(message){
-    errorEl.querySelector('span').textContent = message;
-    errorEl.classList.add('show');
-    input.setAttribute('aria-invalid', 'true');
-    input.focus();
-    input.select();
-  }
-
-  function clearError(){
-    errorEl.classList.remove('show');
-    input.setAttribute('aria-invalid', 'false');
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearError();
-    const value = input.value.trim();
-    if(!value){
-      showError(t('case.gate.errorEmpty'));
-      return;
-    }
-    const hash = await sha256Hex(value);
-    if(hash === PASSWORD_HASH){
-      try { sessionStorage.setItem(SESSION_KEY, '1'); } catch(e) { /* storage unavailable, session persistence skipped */ }
-      unlock();
-    } else {
-      showError(t('case.gate.errorWrong'));
-    }
-  });
-
-  toggleBtn.addEventListener('click', () => {
-    const isPassword = input.type === 'password';
-    input.type = isPassword ? 'text' : 'password';
-    toggleBtn.setAttribute('aria-pressed', String(isPassword));
-    toggleBtn.setAttribute('aria-label', isPassword ? t('case.gate.hidePassword') : t('case.gate.showPassword'));
-    input.focus();
-  });
-
-  // Restore access within the same browser session.
-  (function checkSession(){
-    try {
-      if(sessionStorage.getItem(SESSION_KEY) === '1'){
-        unlock();
-      }
-    } catch(e) { /* storage unavailable, always show gate */ }
-  })();
+  // i18n.js fires "localechange" after the first dictionary load and on every switch.
+  document.addEventListener('localechange', loadCase);
 </script>
 
 </body>

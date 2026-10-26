@@ -1,41 +1,75 @@
 {
   "hero": {
-    "eyebrow": "Protected case study",
     "title": "EcoRisk — Environmental Risk Platform",
     "context": "Turned risk into safe decision-making for environmental credit approval.",
-    "role": "Product Designer",
-    "note": "Client and product names in this case study have been anonymized to \u201cEcoRisk\u201d in line with the confidentiality terms of this project. [Confidential detail omitted where the source material did not specify timeline, team size, or scope.]"
+    "note": "Client and product names in this case study have been anonymized to “EcoRisk” in line with the confidentiality terms of this project. [Confidential detail omitted where the source material did not specify timeline, team size, or scope.]"
   },
   "challenge": {
     "heading": "Challenge / problem",
     "paragraphs": [
       "Incomplete and disorganized information, along with usability and accessibility issues, created a risk of misinterpretation.",
-      "Two consequences stood out: inconsistency \u2014 divergent analyses for the same client \u2014 and omission \u2014 vital data ignored in reports.",
-      "The problem wasn\u2019t a lack of information, it was disorganization."
+      "Two consequences stood out: inconsistency — divergent analyses for the same client — and omission — vital data ignored in reports.",
+      "The problem wasn’t a lack of information, it was disorganization."
     ],
     "stats": [
-      { "value": "+4 minutes", "label": "to perform simple searches" },
-      { "value": "+8 minutes", "label": "to generate complete reports" },
-      { "value": "Unfeasible", "label": "operation at that pace" }
+      {
+        "value": "+4 minutes",
+        "label": "to perform simple searches"
+      },
+      {
+        "value": "+8 minutes",
+        "label": "to generate complete reports"
+      },
+      {
+        "value": "Unfeasible",
+        "label": "operation at that pace"
+      }
     ],
     "costOfUncertainty": [
-      { "title": "Rework", "desc": "lack of confidence in preliminary analyses" },
-      { "title": "Disputes", "desc": "processes reviewed and fines received" },
-      { "title": "Losses", "desc": "financial losses due to improper approvals" }
+      {
+        "title": "Rework",
+        "desc": "lack of confidence in preliminary analyses"
+      },
+      {
+        "title": "Disputes",
+        "desc": "processes reviewed and fines received"
+      },
+      {
+        "title": "Losses",
+        "desc": "financial losses due to improper approvals"
+      }
     ]
   },
   "process": {
     "heading": "Process",
     "intro": "Before the screen, I organized decisions.",
     "pillars": [
-      { "title": "Query", "desc": "property data search" },
-      { "title": "Identification", "desc": "visualization of property boundaries on the map" },
-      { "title": "Analysis", "desc": "environmental risk report generation" }
+      {
+        "title": "Query",
+        "desc": "property data search"
+      },
+      {
+        "title": "Identification",
+        "desc": "visualization of property boundaries on the map"
+      },
+      {
+        "title": "Analysis",
+        "desc": "environmental risk report generation"
+      }
     ],
     "objectivity": [
-      { "title": "Unified search", "desc": "centralized and cross-referenced data" },
-      { "title": "Compliance", "desc": "business rules translated visually" },
-      { "title": "Documentation", "desc": "exportable, bulletproof reports" }
+      {
+        "title": "Unified search",
+        "desc": "centralized and cross-referenced data"
+      },
+      {
+        "title": "Compliance",
+        "desc": "business rules translated visually"
+      },
+      {
+        "title": "Documentation",
+        "desc": "exportable, bulletproof reports"
+      }
     ],
     "validation": "I validated with the users before writing any code. Early alignment ensured full adoption of the solution."
   },
@@ -63,7 +97,7 @@
         "desc": "Search expanded to 3 new parameters, giving flexibility in data input and reducing friction and complexity.",
         "image": "images/ecorisk-search-panel.png",
         "alt": "EcoRisk search panel with options to search by CAR number, CPF/CNPJ, map click, or coordinates, alongside a satellite map of Brazil.",
-        "caption": "The consultation panel consolidates every search method \u2014 CAR number, document number, map click, or coordinates \u2014 into one interface."
+        "caption": "The consultation panel consolidates every search method — CAR number, document number, map click, or coordinates — into one interface."
       },
       {
         "title": "Highlight for the selected area",
@@ -91,19 +125,31 @@
         "desc": "Each relevant regulatory layer is cross-referenced automatically and shown with a clear conformity indicator.",
         "image": "images/ecorisk-report-page2.png",
         "alt": "Table of spatial overlap information listing regulatory layers such as embargoes, indigenous lands, and conservation units, each with a conformity status icon.",
-        "caption": "Every regulatory layer \u2014 embargoes, indigenous lands, conservation units, and more \u2014 is checked automatically and flagged with a conformity status."
+        "caption": "Every regulatory layer — embargoes, indigenous lands, conservation units, and more — is checked automatically and flagged with a conformity status."
       }
     ]
   },
   "outcomes": {
     "heading": "Outcomes and learnings",
     "speed": [
-      { "label": "Before", "value": "Reports generated with a high risk of human error" },
-      { "label": "After", "value": "-2 minutes to generate complete reports (100+ pages). Searches in under 60s." }
+      {
+        "label": "Before",
+        "value": "Reports generated with a high risk of human error"
+      },
+      {
+        "label": "After",
+        "value": "-2 minutes to generate complete reports (100+ pages). Searches in under 60s."
+      }
     ],
     "businessImpact": [
-      { "value": "-90%", "label": "in fines received for improper credit approval" },
-      { "value": "3 to 5 days", "label": "new timeframe for the approval process (previously a minimum of 3 weeks)" }
+      {
+        "value": "-90%",
+        "label": "in fines received for improper credit approval"
+      },
+      {
+        "value": "3 to 5 days",
+        "label": "new timeframe for the approval process (previously a minimum of 3 weeks)"
+      }
     ],
     "closing": "What matters: trust. More than just pretty screens, this delivered standardized decisions and reliable data. Risk was mitigated through process design.",
     "summary": [

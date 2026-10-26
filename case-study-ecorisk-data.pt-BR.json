@@ -1,9 +1,7 @@
 {
   "hero": {
-    "eyebrow": "Case protegido",
-    "title": "EcoRisk — Plataforma de Risco Ambiental",
+    "title": "Inteligência geoespacial para compliance rural",
     "context": "Transformei risco em tomada de decisão segura para aprovação de crédito ambiental.",
-    "role": "Product Designer",
     "note": "O nome do cliente e do produto neste case foram anonimizados para “EcoRisk”, conforme os termos de confidencialidade deste projeto. [Detalhe confidencial omitido onde o material de origem não especificava prazo, tamanho da equipe ou escopo.]"
   },
   "challenge": {
@@ -14,28 +12,64 @@
       "O problema não era falta de informação, era desorganização."
     ],
     "stats": [
-      { "value": "+4 minutos", "label": "para realizar buscas simples" },
-      { "value": "+8 minutos", "label": "para gerar relatórios completos" },
-      { "value": "Inviável", "label": "operar nesse ritmo" }
+      {
+        "value": "+4 minutos",
+        "label": "para realizar buscas simples"
+      },
+      {
+        "value": "+8 minutos",
+        "label": "para gerar relatórios completos"
+      },
+      {
+        "value": "Inviável",
+        "label": "operar nesse ritmo"
+      }
     ],
     "costOfUncertainty": [
-      { "title": "Retrabalho", "desc": "falta de confiança nas análises preliminares" },
-      { "title": "Contestações", "desc": "processos revisados e multas recebidas" },
-      { "title": "Perdas", "desc": "perdas financeiras por aprovações indevidas" }
+      {
+        "title": "Retrabalho",
+        "desc": "falta de confiança nas análises preliminares"
+      },
+      {
+        "title": "Contestações",
+        "desc": "processos revisados e multas recebidas"
+      },
+      {
+        "title": "Perdas",
+        "desc": "perdas financeiras por aprovações indevidas"
+      }
     ]
   },
   "process": {
     "heading": "Processo",
     "intro": "Antes da tela, organizei decisões.",
     "pillars": [
-      { "title": "Consulta", "desc": "busca de dados do imóvel" },
-      { "title": "Identificação", "desc": "visualização dos limites do imóvel no mapa" },
-      { "title": "Análise", "desc": "geração do relatório de risco ambiental" }
+      {
+        "title": "Consulta",
+        "desc": "busca de dados do imóvel"
+      },
+      {
+        "title": "Identificação",
+        "desc": "visualização dos limites do imóvel no mapa"
+      },
+      {
+        "title": "Análise",
+        "desc": "geração do relatório de risco ambiental"
+      }
     ],
     "objectivity": [
-      { "title": "Busca unificada", "desc": "dados centralizados e cruzados" },
-      { "title": "Conformidade", "desc": "regras de negócio traduzidas visualmente" },
-      { "title": "Documentação", "desc": "relatórios exportáveis e à prova de falhas" }
+      {
+        "title": "Busca unificada",
+        "desc": "dados centralizados e cruzados"
+      },
+      {
+        "title": "Conformidade",
+        "desc": "regras de negócio traduzidas visualmente"
+      },
+      {
+        "title": "Documentação",
+        "desc": "relatórios exportáveis e à prova de falhas"
+      }
     ],
     "validation": "Validei com os usuários antes de escrever qualquer código. O alinhamento prévio garantiu a adoção total da solução."
   },
@@ -98,12 +132,24 @@
   "outcomes": {
     "heading": "Resultados e aprendizados",
     "speed": [
-      { "label": "Antes", "value": "Relatórios gerados com alto risco de erro humano" },
-      { "label": "Depois", "value": "-2 minutos para gerar relatórios completos (100+ páginas). Buscas em menos de 60s." }
+      {
+        "label": "Antes",
+        "value": "Relatórios gerados com alto risco de erro humano"
+      },
+      {
+        "label": "Depois",
+        "value": "-2 minutos para gerar relatórios completos (100+ páginas). Buscas em menos de 60s."
+      }
     ],
     "businessImpact": [
-      { "value": "-90%", "label": "em multas recebidas por aprovação indevida de crédito" },
-      { "value": "3 a 5 dias", "label": "novo prazo para o processo de aprovação (antes, no mínimo 3 semanas)" }
+      {
+        "value": "-90%",
+        "label": "em multas recebidas por aprovação indevida de crédito"
+      },
+      {
+        "value": "3 a 5 dias",
+        "label": "novo prazo para o processo de aprovação (antes, no mínimo 3 semanas)"
+      }
     ],
     "closing": "O que importa: confiança. Mais do que telas bonitas, isso entregou decisões padronizadas e dados confiáveis. O risco foi mitigado por meio do design do processo.",
     "summary": [
