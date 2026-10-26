@@ -1,38 +1,32 @@
 {
   "page.home.title": "Amanda Freitas — Product Design",
   "page.case.title": "Case EcoRisk — Amanda Freitas",
-
   "nav.name": "Amanda Freitas",
   "nav.tag": "Product Designer",
-  "nav.myWork": "Trabalhos",
+  "nav.myWork": "Experiência",
   "nav.projects": "Projetos",
   "nav.contact": "Contato",
-
   "hero.headline": "Criando ordem visual e<br>eficiência sistêmica.",
   "hero.sub": "Ordem no caos.<br>Clareza na experiência.",
-
-  "work.heading": "Trabalhos",
-  "work.eyebrow": "Experiência",
-
+  "work.heading": "Experiência",
+  "work.eyebrow": "Trajetória profissional",
   "work.codex.summary": "Desenho soluções para órgãos governamentais com base em dados para decisões melhores. Projetos e clientes sob NDA.",
-  "work.codex.projectA.title": "Projeto A",
+  "work.codex.projectA.title": "Inteligência na detecção e resposta a incêndios",
   "work.codex.projectA.desc": "Reduzimos o tempo de detecção e resposta a incêndios em um bioma específico no Brasil. A plataforma permite detecção automatizada a cada 10 minutos, priorização dos casos mais graves e comunicação direta com os órgãos responsáveis, enviando as coordenadas geográficas exatas do incêndio.",
   "work.codex.projectA.impactLabel": "Impacto —",
   "work.codex.projectA.impact": "tempo de resposta reduzido de 2 dias para 10 minutos",
-  "work.codex.projectB.title": "Projeto B",
+  "work.codex.projectB.title": "Inteligência geoespacial para compliance rural",
   "work.codex.projectB.desc": "Transformamos inteligência geoespacial ambiental em suporte estratégico para a concessão de crédito rural no Brasil. Desenhei uma experiência centralizada que converte dados geoespaciais complexos em inteligência acionável instantânea.",
   "work.codex.projectB.impactLabel": "Impacto —",
   "work.codex.projectB.impact": "redução de 70% no tempo de análise",
-
   "work.pixeon.summary": "Desenhei soluções hospitalares e de saúde focadas em alta confiabilidade e performance.",
   "work.pixeon.item1": "Conduzi um teste de usabilidade em um produto interno e identifiquei oportunidades de melhoria antes de chegar aos usuários.",
   "work.pixeon.item2": "Revisei o fluxo de agendamento de exames com base em dados de usuários, identifiquei hipóteses para a alta taxa de abandono e sugeri antecipar quais documentos são necessários para o agendamento, testando se isso reduz a taxa.",
   "work.pixeon.item3": "Desenhei fluxos de conversa com IA para um chatbot de agendamento de exames.",
   "work.pixeon.impactLabel": "Impacto",
   "work.pixeon.impact": "Liderei a ideação e criação de protótipos de alta fidelidade para validar o Product-Market Fit com stakeholders e usuários finais. Essa materialização visual foi fundamental para embasar decisões estratégicas de negócio que resultaram na maior venda da história da empresa nesse segmento.",
-
   "projects.heading": "Projetos",
-  "projects.eyebrow": "Estudos de caso",
+  "projects.eyebrow": "Atuação",
   "projects.ecorisk.lock": "Case protegido",
   "projects.ecorisk.title": "EcoRisk — Plataforma de Risco Ambiental",
   "projects.ecorisk.tag1": "UX/UI Design",
@@ -41,18 +35,15 @@
   "projects.ecorisk.summary": "Transformando dados fragmentados de conformidade ambiental em uma plataforma clara e pronta para decisão, voltada a analistas de crédito.",
   "projects.ecorisk.role": "Função — Product Designer",
   "projects.ecorisk.cta": "Ver case completo",
-
   "contact.heading": "Contato",
   "contact.eyebrow": "Sempre aberta a novas aventuras",
-  "contact.copy": "Tem um nó complexo de design para desatar ou só precisa de uma segunda opinião? Vamos conversar. O chá (ou o e-mail) é por minha conta.",
+  "contact.copy": "Tem um problema complexo de design para resolver ou só precisa de uma segunda opinião? Vamos conversar. O chá (ou e-mail) é por minha conta!",
   "contact.copyEmailLabel": "Copiar endereço de e-mail",
   "contact.copied": "Copiado",
   "contact.linkedin": "LinkedIn",
-
   "lang.switcherLabel": "Idioma",
   "lang.en": "English",
   "lang.ptBR": "Português (Brasil)",
-
   "case.backToProjects": "← Voltar para Projetos",
   "case.backToHome": "Voltar para o início",
   "case.gate.label": "Case protegido",
@@ -65,5 +56,10 @@
   "case.gate.errorWrong": "Senha incorreta. Tente novamente.",
   "case.gate.errorLoad": "Algo deu errado ao carregar este case. Tente novamente.",
   "case.gate.submit": "Desbloquear case",
-  "case.nav.ariaLabel": "Navegação do case"
+  "case.nav.ariaLabel": "Navegação do case",
+  "work.codex.date": "jul/24 — atual",
+  "work.pixeon.date": "jun/23 — jan/24",
+  "case.sub.uncertainty": "O custo da incerteza",
+  "case.sub.pillars": "Três pilares",
+  "case.sub.objectivity": "Objetividade"
 }
